@@ -37,6 +37,6 @@ jobs:
       #   run: |
       #     python -m pytest
 
-      - name: Stop Flask app
-        run: | 
-          kill $FLASK_PID
+      # - name: Stop Flask app
+      #   run: | 
+      #     kill $FLASK_PID
