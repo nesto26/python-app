@@ -26,10 +26,17 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      
+      - name: Run application
+        run: |
+          python -m app & 
+          FLASK_PID=$!
+          sleep 5  # Wait for the app to start
+
       # - name: Run tests
       #   run: |
       #     python -m pytest
 
-      - name: Run application
+      - name: Stop Flask app
         run: |
-          python -m app
+          kill $FLASK_PID
