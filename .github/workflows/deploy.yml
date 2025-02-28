@@ -61,6 +61,7 @@ jobs:
           aws-region: us-east-1
 
       - name: Terraform Init
+        working-directory: ./my-eks-project
         run: terraform init
 
       - name: Terraform Apply
