@@ -7,7 +7,7 @@ module "eks" {
   version = "~> 19.0"
 
   cluster_name    = var.cluster_name
-  cluster_version = "1.27"
+  cluster_version = "1.25"
 
   vpc_id          = module.vpc.vpc_id
   subnet_ids      = module.vpc.private_subnets
@@ -24,7 +24,7 @@ module "eks" {
 
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
-  version = "~> 3.0"
+  version = "~> 5.0"
 
   name = "${var.cluster_name}-vpc"
   cidr = "10.0.0.0/16"
@@ -41,6 +41,6 @@ output "cluster_name" {
   value = module.eks.cluster_name
 }
 
-output "kubeconfig" {
-  value = module.eks.kubeconfig
-}
+# output "kubeconfig" {
+#   value = module.eks.kubeconfig
+# }
