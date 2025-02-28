@@ -64,7 +64,7 @@ jobs:
         run: terraform init
 
       - name: Terraform Apply
-        working-directory: ./terraform
+        working-directory: ./my-eks-project
         run: terraform apply -auto-approve
 
   deploy-app:
