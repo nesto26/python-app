@@ -27,7 +27,7 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
         with: 
-          aws-region: us-east-2
+          aws-region: us-east-1
 
 
       - name: Build and push Docker image
@@ -64,13 +64,13 @@ jobs:
         working-directory: ./my-eks-project
         run: terraform init
 
-      # - name: Terraform Apply
-      #   working-directory: ./my-eks-project
-      #   run: terraform apply -auto-approve
-
-      - name: Terraform destroy
+      - name: Terraform Apply
         working-directory: ./my-eks-project
-        run: terraform destroy -auto-approve
+        run: terraform apply -auto-approve
+
+      # - name: Terraform destroy
+      #   working-directory: ./my-eks-project
+      #   run: terraform destroy -auto-approve
 
   deploy-app:
     runs-on: ubuntu-latest

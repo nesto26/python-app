@@ -5,5 +5,5 @@ variable "aws_region" {
 
 variable "cluster_name" {
   description = "Name of the EKS cluster"
-  default     = "my-eks-cluster1"
+  default     = "my-eks-cluster"
 }
